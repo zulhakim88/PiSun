@@ -28,7 +28,7 @@ According to Google: [696,340 KM](https://www.google.com/search?q=sun+radius&oq=
 
 ### The Beginning
 
-* Thinking of using NodeJS
+* Thinking of using Node/Express JS
 * Calculate PI to the Nth decimal points.
 * Store it somewhere (was thinking of MangoDB).
 * Calculation will run by itself for a certain period of time.
@@ -36,11 +36,11 @@ According to Google: [696,340 KM](https://www.google.com/search?q=sun+radius&oq=
 
 ### The End
 
-* Ended up using NodeJS.
+* Ended up using Node/Express JS.
 * Along the way, I realized that I will not have to store anything in the DB as PI or Circumference calculation can be calculated on-demand.
 * I also found out that calculation percision doesn't matter much after the PI's 15th decimal point as per this article [here](https://www.jpl.nasa.gov/edu/news/2016/3/16/how-many-decimals-of-pi-do-we-really-need/).
 * As I want to have the utmost performance in getting the circumference result, calculating on-demand and limiting it up to 15 decimal points makes more sense for me in terms of implementation.
-* Can it compute circumference using PI bigger than 15 decimal points? **ABSOLUTELY!**. Just use the manual calculation button that generates PI with the increase of precision by 1.
+* Can it compute circumference using PI bigger than 15 decimal points? **ABSOLUTELY!**. Just use the manual calculation button that generates PI with the increase precision of +1.
 
 #### The Test
 
