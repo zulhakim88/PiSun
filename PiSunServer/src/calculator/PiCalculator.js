@@ -4,7 +4,7 @@
 'use strict';
 
 /* return floor(log2(a)) for a > 0 and 0 for a = 0 */
-function floor_log2(a) {
+const floor_log2 = a => {
   let k_max, a1, k, i;
   k_max = 0n;
   while (a >> (2n ** k_max) !== 0n) {
@@ -20,15 +20,15 @@ function floor_log2(a) {
     }
   }
   return k;
-}
+};
 
 /* return ceil(log2(a)) for a > 0 */
-function ceil_log2(a) {
+const ceil_log2 = a => {
   return floor_log2(a - 1n) + 1n;
-}
+};
 
 /* return floor(sqrt(a)) (not efficient but simple) */
-function int_sqrt(a) {
+const int_sqrt = a => {
   let l, u, s;
   if (a === 0n) return a;
   l = ceil_log2(a);
@@ -40,10 +40,10 @@ function int_sqrt(a) {
     if (u >= s) break;
   }
   return s;
-}
+};
 
 /* return pi * 2**prec */
-function calc_pi(prec) {
+const calc_pi = prec => {
   const CHUD_A = 13591409n;
   const CHUD_B = 545140134n;
   const CHUD_C = 640320n;
@@ -51,7 +51,7 @@ function calc_pi(prec) {
   const CHUD_BITS_PER_TERM = 47.11041313821584202247; /* log2(C/12)*3 */
 
   /* return [P, Q, G] */
-  function chud_bs(a, b, need_G) {
+  const chud_bs = (a, b, need_G) => {
     let c, P, Q, G, P1, Q1, G1, P2, Q2, G2;
     if (a === b - 1n) {
       G = (2n * b - 1n) * (6n * b - 1n) * (6n * b - 5n);
@@ -68,7 +68,7 @@ function calc_pi(prec) {
       else G = 0n;
     }
     return [P, Q, G];
-  }
+  };
 
   let n, P, Q, G;
   /* number of serie terms */
@@ -77,7 +77,7 @@ function calc_pi(prec) {
   Q = ((CHUD_C / 12n) * (Q << prec)) / (P + Q * CHUD_A);
   G = int_sqrt(CHUD_C << (2n * prec));
   return (Q * G) >> prec;
-}
+};
 
 const calculator = args => {
   let r, n_digits, n_bits, out;

@@ -89,7 +89,7 @@ function App() {
                       OR
                     </Title>
                     <Paragraph style={{ marginTop: '50px'}}>
-                      You can just calculate with the auto generated PI which increases in precision each time you hit the 'Calculate!' button.
+                      You can just calculate with the auto generated PI which increases in precision each time you hit the 'Calculate Manually!' button.
                     </Paragraph>
                   </div>
                 </Col>
@@ -97,7 +97,7 @@ function App() {
               <Row gutter={16}>
                 <Col className="gutter-row" span={24}>
                   <div style={style3}>
-                    <Button type="primary" size="large" style={{ marginRight: '10px'}} onClick={calculate} loading={isSubmit2}>Calculate!</Button>
+                    <Button type="primary" size="large" style={{ marginRight: '10px'}} onClick={calculate} loading={isSubmit2}>Calculate Manually!</Button>
                     <Button size="large" style={{ marginLeft: '10px'}} onClick={reset}>Reset</Button>
                   </div>
                 </Col>
