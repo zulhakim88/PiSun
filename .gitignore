@@ -1,9 +1,12 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+pi-sun-client/node_modules
+PiSunServer/node_modules
 /.pnp
 .pnp.js
+pi-sun-client/.idea
+PiSunServer/.idea
 
 # testing
 /coverage
