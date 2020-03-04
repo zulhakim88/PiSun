@@ -50,7 +50,6 @@ According to Google: [696,340 KM](https://www.google.com/search?q=sun+radius&oq=
 
 ### The Issues
 
-* It will get slower and slower as the length of PI decimals grow.
 * It is slower when trying to display when the app reaches ~100k decimal points of PI.
 
 ## Running the project
