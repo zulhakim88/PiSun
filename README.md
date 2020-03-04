@@ -22,7 +22,7 @@ Learning more about implementing Chudnovsky's algorithm led me to [Fabrice Bella
 
 According to Google: [696,340 KM](https://www.google.com/search?q=sun+radius&oq=sun+radius&aqs=chrome..69i57j0l7.1465j1j7&sourceid=chrome&ie=UTF-8)
 
-#### The PI algorithm
+### The PI algorithm
 
 [Fabrice Bellard's](https://bellard.org/quickjs/pi.html) take on [Chudnovsky's algorithm](https://en.wikipedia.org/wiki/Chudnovsky_algorithm).
 
