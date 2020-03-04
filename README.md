@@ -42,7 +42,7 @@ According to Google: [696,340 KM](https://www.google.com/search?q=sun+radius&oq=
 * As I want to have the utmost performance in getting the circumference result, calculating on-demand and limiting it up to 15 decimal points makes more sense for me in terms of implementation.
 * Can it compute circumference using PI bigger than 15 decimal points? **ABSOLUTELY!**. Just use the manual calculation button that generates PI with the increase precision of +1.
 
-#### The Test
+### The Test
 
 * I've generated up to 200,000 PI decimal points and works as expected. 
 
