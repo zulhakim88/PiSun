@@ -1,6 +1,6 @@
 # The PiSun calculator
 
-Culculate the circumference of the Sun with an increasing/Nth number of PI precision.
+Culculate the circumference of the Sun with an increasing N number of PI precision.
 
 ## Objectives
 
