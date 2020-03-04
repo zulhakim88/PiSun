@@ -2,40 +2,13 @@
 
 Culculate the circumference of the Sun with an increasing/Nth number of PI precision.
 
-## Running the project
-
-### The Requirements
-
-The following must be installed:
-* npm
-
-### Start the server
-
-From project root:
-```
-cd PiSunServer
-npm install
-npm start
-```
-
-### Start the app
-
-From project root:
-```
-cd pi-sun-client
-npm install
-npm start
-```
-
-Visit http://localhost:3000 to view the app
-
 ## Objectives
 
 * Calculate PI to the Nth decimal point precision
 * Use that PI value to calculate the circumfrence of the sun
 * Display both values in a webapp
 
-## The Research
+## The Journey
 
 ### The Calculation of PI
 
@@ -79,6 +52,31 @@ According to Google: [696,340 KM](https://www.google.com/search?q=sun+radius&oq=
 
 * It will get slower and slower as the length of PI decimals grow.
 * It is slower when trying to display when the app reaches ~100k decimal points of PI.
+
+## Running the project
+
+### The Requirements
+
+You will need this to run the project:
+* npm
+
+### Start the server
+
+```
+cd PiSunServer
+npm install
+npm start
+```
+
+### Start the app
+
+```
+cd pi-sun-client
+npm install
+npm start
+```
+
+Frontend: http://localhost:3000
 
 ## The Limitations
 
