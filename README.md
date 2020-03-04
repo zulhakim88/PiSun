@@ -6,7 +6,7 @@ Culculate the circumference of the Sun with an increasing/Nth number of PI preci
 
 * Calculate PI to the Nth decimal point precision
 * Use that PI value to calculate the circumfrence of the sun
-* Display both values in a webapp
+* Display both values in a WebApp
 
 ## The Journey
 
