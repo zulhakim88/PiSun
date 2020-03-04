@@ -84,6 +84,6 @@ Frontend: http://localhost:3000
 ## The Future
 
 * Probably find a better(faster) PI generating algorithm.
-* I decided to use NodeJS as it's the easiest/fastest for me to start of with. Probably using a more robust/high performance languages like Rust.
+* I decided to use Node/Express as it's the easiest/fastest for me to start of with. Probably using a more robust/high performance languages like Rust.
 * Write test for the implementation
 * Scalibility (Never really thought about it).
