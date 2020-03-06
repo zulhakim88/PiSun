@@ -18,18 +18,6 @@ function App() {
   const [isSubmit1, setIsSubmit1] = useState(false);
   const [isSubmit2, setIsSubmit2] = useState(false);
 
-  useEffect(() => {
-    const generatePi = async() => {
-      try {
-        await CalculatorService.getPI();
-        console.log('PI calculation started.');
-      } catch (e) {
-        console.log(e);
-      }
-    };
-    generatePi();
-  }, []);
-
   const calculate = useCallback(async () => {
     setIsSubmit2(true);
     setDecimalLength("");

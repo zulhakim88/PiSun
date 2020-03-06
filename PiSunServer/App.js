@@ -10,14 +10,6 @@ let COUNTER = 0;
 
 let PI;
 
-app.get('/api/generate-pi', (req, res) => {
-  setInterval(() => {
-    PI = piCalculator([COUNTER]);
-    COUNTER++;
-  }, 5000);
-  res.send("PI Calculation started.");
-});
-
 app.get('/api/calculate/:precision', (req, res) => {
   const length = req.params.precision;
   const pi = piCalculator([length]);
@@ -37,6 +29,13 @@ app.get('/api/reset', (req, res) => {
   res.json({ pi, sunCircumference});
 });
 
-app.listen(port, () => console.log(`PiSun app listening on port ${port}!`));
+app.listen(port, () => {
+  console.log(`PiSun app listening on port ${port}!`);
+  console.log('PI Calculation starts');
+  setInterval(() => {
+    PI = piCalculator([COUNTER]);
+    COUNTER++;
+  }, 5000);
+});
 
 module.exports = app;
