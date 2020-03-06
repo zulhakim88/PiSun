@@ -1,6 +1,14 @@
 import fetch from 'node-fetch';
 
 export default class CalculatorService{
+
+    static getPI() {
+        return fetch('/api/generate-pi', {
+            method: 'GET',
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        })
+    }
+
     static getSunCircumference(){
         return fetch('/api/calculate', {
             method: 'GET',

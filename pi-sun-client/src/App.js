@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {Row, Col, Layout, Typography, Input, Button} from 'antd';
 import './App.css';
 import CalculatorService from "./services/CalculatorService";
@@ -18,12 +18,25 @@ function App() {
   const [isSubmit1, setIsSubmit1] = useState(false);
   const [isSubmit2, setIsSubmit2] = useState(false);
 
+  useEffect(() => {
+    const generatePi = async() => {
+      try {
+        await CalculatorService.getPI();
+        console.log('PI calculation started.');
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    generatePi();
+  }, []);
+
   const calculate = useCallback(async () => {
     setIsSubmit2(true);
     setDecimalLength("");
     try {
       const res = await CalculatorService.getSunCircumference();
-      setPi(res.pi);
+      console.log('Circle circumference:', res);
+      setPi(res.PI);
       setCircumference(res.sunCircumference);
       console.log(res);
       setIsSubmit2(false);
@@ -39,11 +52,11 @@ function App() {
       setIsSubmit1(false);
       return;
     }
-    if(decimalLength > 15) {
-      alert("There's no value in in calculating with PI decimals more than 15.");
-      setIsSubmit1(false);
-      return;
-    }
+    // if(decimalLength > 15) {
+    //   alert("There's no value in in calculating with PI decimals more than 15.");
+    //   setIsSubmit1(false);
+    //   return;
+    // }
     try {
       const res = await CalculatorService.getSunCircumferenceWithPILength(decimalLength);
       setPi(res.pi);
@@ -55,16 +68,6 @@ function App() {
       setIsSubmit1(false);
     }
   }, [decimalLength]);
-
-  const reset = useCallback(async () => {
-    try {
-      await CalculatorService.reset();
-      setPi("0");
-      setCircumference("0");
-    } catch (e) {
-      console.log(e);
-    }
-  }, []);
 
   return (
     <div className="App">
@@ -102,8 +105,7 @@ function App() {
               <Row gutter={16}>
                 <Col className="gutter-row" span={24}>
                   <div style={style3}>
-                    <Button type="primary" size="large" style={{ marginRight: '10px'}} onClick={calculate} loading={isSubmit2}>Calculate Manually!</Button>
-                    <Button size="large" style={{ marginLeft: '10px'}} onClick={reset}>Reset</Button>
+                    <Button type="primary" size="large" onClick={calculate} loading={isSubmit2}>Calculate Manually!</Button>
                   </div>
                 </Col>
               </Row>

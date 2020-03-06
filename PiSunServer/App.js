@@ -8,6 +8,16 @@ const port = 4000;
 
 let COUNTER = 0;
 
+let PI;
+
+app.get('/api/generate-pi', (req, res) => {
+  setInterval(() => {
+    PI = piCalculator([COUNTER]);
+    COUNTER++;
+  }, 5000);
+  res.send("PI Calculation started.");
+});
+
 app.get('/api/calculate/:precision', (req, res) => {
   const length = req.params.precision;
   const pi = piCalculator([length]);
@@ -16,10 +26,8 @@ app.get('/api/calculate/:precision', (req, res) => {
 });
 
 app.get('/api/calculate', (req, res) => {
-  const pi = piCalculator([COUNTER]);
-  const sunCircumference = sunCircCalculator(pi);
-  COUNTER++;
-  res.json({ pi, sunCircumference});
+  const sunCircumference = sunCircCalculator(PI);
+  res.json({ PI, sunCircumference});
 });
 
 app.get('/api/reset', (req, res) => {
