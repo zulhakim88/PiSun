@@ -35,7 +35,7 @@ app.listen(port, () => {
   setInterval(() => {
     PI = piCalculator([COUNTER]);
     COUNTER++;
-  }, 5000);
+  });
 });
 
 module.exports = app;
