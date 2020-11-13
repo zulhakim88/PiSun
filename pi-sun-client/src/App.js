@@ -40,11 +40,6 @@ function App() {
       setIsSubmit1(false);
       return;
     }
-    // if(decimalLength > 15) {
-    //   alert("There's no value in in calculating with PI decimals more than 15.");
-    //   setIsSubmit1(false);
-    //   return;
-    // }
     try {
       const res = await CalculatorService.getSunCircumferenceWithPILength(decimalLength);
       setPi(res.pi);
